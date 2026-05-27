@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>รู้จักครูป๋อม — Cheva Shala Yoga</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --coral:   #C8603A;
+    --coral-l: #E8906A;
+    --coral-xl:#FDF0EA;
+    --warm:    #FAF7F2;
+    --sand:    #EDE8E0;
+    --brown:   #2C1A0E;
+    --gray:    #7A6A5A;
+    --cream:   #FFF9F4;
+    --green:   #4A7C6A;
+    --purple:  #5C4A8A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--warm);
+    font-family: 'Sarabun', sans-serif;
+    color: var(--brown);
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 0 60px;
+  }
+
+  .hero { background: var(--coral); padding: 40px 24px 36px; position: relative; overflow: hidden; }
+  @media (min-width: 600px) {
+    .hero { padding: 52px 40px 44px; }
+  }
+
+  .intro-wrap { padding: 0 16px; margin-top: -1px; }
+  @media (min-width: 600px) {
+    .intro-wrap { padding: 0 32px; }
+  }
+
+  .sections { padding: 0 16px; margin-top: 24px; display: flex; flex-direction: column; gap: 16px; }
+  @media (min-width: 600px) {
+    .sections { padding: 0 32px; gap: 20px; margin-top: 32px; }
+  }
+
+  .closing { margin: 0 16px; margin-top: 16px; background: var(--coral); border-radius: 2px; padding: 22px 20px; display: flex; gap: 16px; align-items: flex-start; }
+  @media (min-width: 600px) {
+    .closing { margin: 0 32px; margin-top: 20px; padding: 28px 32px; align-items: center; }
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 30%;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 10px;
+    font-weight: 300;
+  }
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 54px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  .hero-title {
+    font-size: 15px;
+    color: rgba(255,255,255,0.85);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+  }
+  .hero-stat {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 24px;
+  }
+  .stat-item { text-align: left; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.7);
+    margin-top: 2px;
+    font-weight: 300;
+  }
+  .stat-divider {
+    width: 1px;
+    background: rgba(255,255,255,0.2);
+    align-self: stretch;
+  }
+
+  /* ===== INTRO CARD ===== */
+  .intro-wrap {
+    padding: 0 32px;
+    margin-top: -1px;
+  }
+  .intro-card {
+    background: var(--cream);
+    border-left: 4px solid var(--coral);
+    padding: 22px 20px 22px 28px;
+    position: relative;
+  }
+  @media (min-width: 600px) {
+    .intro-card { padding: 28px 32px; }
+  }
+  .intro-card::before {
+    content: '\201C';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 80px;
+    color: var(--coral-xl);
+    position: absolute;
+    top: 8px; left: 20px;
+    line-height: 1;
+  }
+  .intro-text {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--brown);
+    padding-left: 20px;
+  }
+  .intro-text p { margin-bottom: 14px; }
+  .intro-text p:last-child { margin-bottom: 0; }
+  .intro-text em {
+    font-style: italic;
+    color: var(--coral);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+  }
+
+  /* ===== SECTION WRAPPER ===== */
+  .sections {
+    padding: 0 32px;
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .sec {
+    background: var(--cream);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .sec-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 24px;
+  }
+  .sec-icon {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .sec-body {
+    padding: 0 24px 20px;
+  }
+
+  /* color variants */
+  .sec-coral .sec-head { background: var(--coral-xl); border-left: 4px solid var(--coral); }
+  .sec-coral .sec-icon { background: var(--coral); color: #fff; }
+  .sec-coral .sec-title { color: var(--coral); }
+
+  .sec-green .sec-head { background: #FAEAE0; border-left: 4px solid #C8603A; }
+  .sec-green .sec-icon { background: #E8906A; color: #fff; }
+  .sec-green .sec-title { color: #C8603A; }
+
+  .sec-purple .sec-head { background: #F5EDE6; border-left: 4px solid #A0522D; }
+  .sec-purple .sec-icon { background: #A0522D; color: #fff; }
+  .sec-purple .sec-title { color: #A0522D; }
+
+  .sec-sand .sec-head { background: var(--sand); border-left: 4px solid #A0856B; }
+  .sec-sand .sec-icon { background: #A0856B; color: #fff; }
+  .sec-sand .sec-title { color: #6B4E2A; }
+
+  /* CERT GRID */
+  .cert-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  @media (min-width: 600px) {
+    .cert-grid { grid-template-columns: 1fr 1fr; }
+  }
+  .cert-item {
+    background: var(--warm);
+    border-radius: 6px;
+    padding: 10px 12px;
+    border: 1px solid var(--sand);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .cert-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+  .cert-text { font-size: 12px; line-height: 1.5; color: var(--brown); }
+  .cert-sub { font-size: 11px; color: var(--gray); font-weight: 300; margin-top: 1px; }
+
+  /* STYLE PILLS */
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+  }
+  .pill {
+    background: var(--warm);
+    border: 1px solid var(--sand);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 12px;
+    color: var(--brown);
+    font-weight: 400;
+  }
+  .pill-highlight {
+    background: var(--coral-xl);
+    border-color: var(--coral-l);
+    color: var(--coral);
+    font-weight: 600;
+  }
+
+  /* NLP ITEMS */
+  .nlp-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 4px;
+  }
+  .nlp-item {
+    background: var(--warm);
+    border-radius: 6px;
+    padding: 12px 14px;
+    border: 1px solid #E8C9B5;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+  .nlp-badge {
+    background: var(--purple);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+  }
+  .nlp-text { font-size: 13px; color: var(--brown); line-height: 1.5; flex: 1; min-width: 140px; }
+
+  /* ===== CLOSING ===== */
+  .closing {
+    margin: 0 32px;
+    margin-top: 20px;
+    background: var(--coral);
+    border-radius: 2px;
+    padding: 28px 32px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .closing-icon { font-size: 32px; flex-shrink: 0; }
+  .closing-text {
+    font-size: 15px;
+    color: #fff;
+    line-height: 1.8;
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    text-align: center;
+    margin-top: 28px;
+    font-size: 11px;
+    color: var(--gray);
+    letter-spacing: 1px;
+    font-weight: 300;
+  }
+
+  /* fade-in animation */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero        { animation: fadeUp 0.5s ease both; }
+  .intro-wrap  { animation: fadeUp 0.5s ease 0.1s both; }
+  .sections    { animation: fadeUp 0.5s ease 0.2s both; }
+  .closing     { animation: fadeUp 0.5s ease 0.3s both; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-eyebrow">Cheva Shala Yoga · ครูผู้สอน</div>
+    <div class="hero-name">ครูป๋อม<br>เสาวภา หงษ์ทอง</div>
+    <div class="hero-title">Yoga Teacher & School Founder</div>
+    <div class="hero-stat">
+      <div class="stat-item">
+        <div class="stat-num">10+</div>
+        <div class="stat-label">ปีของการสอน</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">5,000+</div>
+        <div class="stat-label">ชั่วโมงสอน</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">10+</div>
+        <div class="stat-label">หลักสูตรการอบรม</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <div class="intro-wrap">
+    <div class="intro-card">
+      <div class="intro-text">
+        <p>ครูป๋อมเริ่มต้นการเดินทางกับโยคะมากกว่า 10 ปีที่แล้ว จากความสนใจส่วนตัวที่ค่อยๆ เติบโตกลายเป็นการสอน และในที่สุดก็กลายเป็นโรงเรียนที่อยากสร้างขึ้นเอง</p>
+        <p>ถ้าจะพูดตรงๆ ครูป๋อมอาจไม่ใช่ครูโยคะแบบที่หลายคนจินตนาการ — <em>ไม่ได้เคร่งขรึม ไม่ได้ดูศักดิ์สิทธิ์</em> แต่การได้สอนด้วยความเป็นตัวเองอย่างเต็มที่นี่แหละ ที่ทำให้ยังมีความสุขกับการสอนมาจนถึงทุกวันนี้</p>
+        <p>สิ่งที่ทำให้การสอนของครูป๋อมต่างออกไปคือการมองโยคะเป็นมากกว่าการออกกำลังกาย ครูป๋อมเชี่ยวชาญทั้งด้านโยคะและจิตภาษาศาสตร์ ซึ่งทำให้การสอนแต่ละคลาสไม่ได้แค่ดูแลร่างกาย แต่เชื่อมโยงถึงความคิด ความรู้สึก และวิธีที่เราสื่อสารกับตัวเองด้วย และเพราะครูป๋อมรู้ดีว่าการพัฒนาตัวเองทั้งจากภายในและภายนอกควรสอดคล้องกัน การเรียนรู้จึงไม่เคยหยุดนิ่ง — และนั่นคือสิ่งที่ครูป๋อมอยากส่งต่อให้นักเรียนทุกคนเช่นกัน</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTIONS -->
+  <div class="sections">
+
+    <!-- YOGA CERTS -->
+    <div class="sec sec-coral">
+      <div class="sec-head">
+        <div class="sec-icon">🧘</div>
+        <div class="sec-title">การอบรมด้านโยคะ</div>
+      </div>
+      <div class="sec-body">
+        <div class="cert-grid">
+          <div class="cert-item">
+            <div class="cert-dot" style="background:var(--coral);"></div>
+            <div>
+              <div class="cert-text">RYT 200 Hot Yoga Teacher Training</div>
+              <div class="cert-sub">Absolute Yoga</div>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot" style="background:var(--coral);"></div>
+            <div>
+              <div class="cert-text">Ashtanga Vinyasa Yoga Training</div>
+              <div class="cert-sub">200 ชั่วโมง</div>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot" style="background:var(--coral);"></div>
+            <div>
+              <div class="cert-text">Advanced Yoga Training</div>
+              <div class="cert-sub">Satit Yoga · 120 ชั่วโมง</div>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot" style="background:var(--coral);"></div>
+            <div>
+              <div class="cert-text">Prenatal Yoga Training</div>
+              <div class="cert-sub">60 ชั่วโมง</div>
+            </div>
+          </div>
+          <div class="cert-item" style="grid-column: 1 / -1;">
+            <div class="cert-dot" style="background:var(--coral-l);"></div>
+            <div>
+              <div class="cert-text">อบรมเพิ่มเติมด้าน alignment, sequencing, การสอนอย่างมีจริยธรรม และโยคะเฉพาะทางอย่างต่อเนื่อง</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NLP -->
+    <div class="sec sec-purple">
+      <div class="sec-head">
+        <div class="sec-icon">🧠</div>
+        <div class="sec-title">จิตภาษาศาสตร์และโค้ชชิ่ง</div>
+      </div>
+      <div class="sec-body">
+        <div class="nlp-items">
+          <div class="nlp-item">
+            <div>
+            <div class="nlp-badge" style="background:#A0522D;">NLP TRAINER</div>
+            </div>
+            <div class="nlp-text">Life Lab Academy<br><span style="font-size:11px; color:var(--gray);">รับรองโดย IFNLP และ AB NLP</span></div>
+          </div>
+          <div class="nlp-item">
+            <div>
+              <div class="nlp-badge" style="background:#C8603A;">CO-FOUNDER</div>
+            </div>
+            <div class="nlp-text">ผู้ร่วมก่อตั้ง สมาคม IFNLP Thai</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STYLES -->
+    <div class="sec sec-green">
+      <div class="sec-head">
+        <div class="sec-icon">🌿</div>
+        <div class="sec-title">สไตล์การสอน</div>
+      </div>
+      <div class="sec-body">
+        <div class="pills">
+          <div class="pill pill-highlight">Hot Yoga</div>
+          <div class="pill pill-highlight">Hatha Yoga</div>
+          <div class="pill pill-highlight">Vinyasa Yoga</div>
+          <div class="pill">Gentle Yoga</div>
+          <div class="pill">โยคะบำบัด</div>
+          <div class="pill">โยคะสำหรับคุณแม่ตั้งครรภ์</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCHOOL -->
+    <div class="sec sec-sand">
+      <div class="sec-head">
+        <div class="sec-icon">🏫</div>
+        <div class="sec-title">Cheva Shala Yoga</div>
+      </div>
+      <div class="sec-body">
+        <div style="font-size:13px; line-height:1.8; color:var(--brown); margin-top:4px;">
+          โรงเรียนโยคะที่เน้นการเรียนรู้แบบ <strong>embodiment</strong> — เข้าใจร่างกายจากข้างใน ไม่ใช่แค่ทำท่าให้สวย สอนทั้งคลาสกลุ่ม ส่วนตัว โยคะบำบัด และ<strong>หลักสูตรครูโยคะ 200 ชั่วโมง</strong> ผสานความเข้าใจด้านจิตภาษาศาสตร์เข้ากับการสอนโยคะอย่างครบองค์รวม
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CLOSING -->
+  <div class="closing">
+    <div class="closing-icon">🙂</div>
+    <div class="closing-text">
+      ถ้าอยากรู้จักกันมากขึ้น หรือยังไม่แน่ใจว่าคอร์สไหนเหมาะกับตัวเอง ทักมาคุยได้เลยนะคะ ครูป๋อมยินดีตอบทุกคำถามค่ะ
+    </div>
+  </div>
+
+  <div class="footer">CHEVA SHALA YOGA · เสาวภา หงษ์ทอง · cheva210121@gmail.com</div>
+
+</div>
+</body>
+</html>
