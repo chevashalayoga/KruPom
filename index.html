@@ -79,31 +79,48 @@
   }
   .hero-name {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 54px;
+    font-size: 22px;
     font-weight: 600;
     color: #fff;
-    line-height: 1.1;
+    line-height: 1.3;
     margin-bottom: 8px;
+    white-space: nowrap;
+  }
+  @media (min-width: 380px) {
+    .hero-name { font-size: 26px; }
+  }
+  @media (min-width: 480px) {
+    .hero-name { font-size: 34px; }
+  }
+  @media (min-width: 600px) {
+    .hero-name { font-size: 48px; line-height: 1.1; white-space: normal; }
   }
   .hero-title {
-    font-size: 15px;
+    font-size: 13px;
     color: rgba(255,255,255,0.85);
     font-weight: 300;
     letter-spacing: 0.5px;
   }
+  @media (min-width: 600px) {
+    .hero-title { font-size: 15px; }
+  }
   .hero-stat {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 24px;
+    flex-wrap: nowrap;
+    gap: 16px;
+    margin-top: 20px;
+    align-items: center;
   }
   .stat-item { text-align: left; }
   .stat-num {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 36px;
+    font-size: 26px;
     font-weight: 600;
     color: #fff;
     line-height: 1;
+  }
+  @media (min-width: 600px) {
+    .stat-num { font-size: 36px; }
   }
   .stat-label {
     font-size: 11px;
@@ -141,10 +158,13 @@
     line-height: 1;
   }
   .intro-text {
-    font-size: 15px;
-    line-height: 1.9;
+    font-size: 13px;
+    line-height: 1.85;
     color: var(--brown);
-    padding-left: 20px;
+    padding-left: 16px;
+  }
+  @media (min-width: 600px) {
+    .intro-text { font-size: 15px; padding-left: 20px; }
   }
   .intro-text p { margin-bottom: 14px; }
   .intro-text p:last-child { margin-bottom: 0; }
@@ -304,12 +324,11 @@
   }
   .closing-icon { font-size: 32px; flex-shrink: 0; }
   .closing-text {
-    font-size: 15px;
+    font-family: 'Sarabun', sans-serif;
+    font-size: 14px;
+    font-style: normal;
     color: #fff;
     line-height: 1.8;
-    font-style: italic;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
   }
 
   /* ===== FOOTER ===== */
@@ -368,6 +387,23 @@
         <p>สิ่งที่ทำให้การสอนของครูป๋อมต่างออกไปคือการมองโยคะเป็นมากกว่าการออกกำลังกาย ครูป๋อมเชี่ยวชาญทั้งด้านโยคะและจิตภาษาศาสตร์ ซึ่งทำให้การสอนแต่ละคลาสไม่ได้แค่ดูแลร่างกาย แต่เชื่อมโยงถึงความคิด ความรู้สึก และวิธีที่เราสื่อสารกับตัวเองด้วย และเพราะครูป๋อมรู้ดีว่าการพัฒนาตัวเองทั้งจากภายในและภายนอกควรสอดคล้องกัน การเรียนรู้จึงไม่เคยหยุดนิ่ง — และนั่นคือสิ่งที่ครูป๋อมอยากส่งต่อให้นักเรียนทุกคนเช่นกัน</p>
       </div>
     </div>
+  </div>
+
+  <!-- CTA MID -->
+  <div style="padding: 0 16px; margin-top: 20px; text-align: center;">
+    <a href="https://lin.ee/YQq9atLO" style="
+      display: inline-block;
+      background: #C8603A;
+      color: #fff;
+      font-family: Sarabun, sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 14px rgba(200,96,58,0.3);
+    ">💬 ปรึกษาและสมัคร</a>
   </div>
 
   <!-- SECTIONS -->
@@ -476,6 +512,24 @@
 
   </div>
 
+  <!-- CTA BOTTOM -->
+  <div style="padding: 0 16px; margin-top: 8px; text-align: center;">
+    <a href="https://lin.ee/YQq9atLO" style="
+      display: inline-block;
+      background: #fff;
+      color: #C8603A;
+      font-family: Sarabun, sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      border: 2px solid #C8603A;
+      box-shadow: 0 4px 14px rgba(200,96,58,0.15);
+    ">🔍 ค้นหาคลาสเรียน</a>
+  </div>
+
   <!-- CLOSING -->
   <div class="closing">
     <div class="closing-icon">🙂</div>
@@ -484,7 +538,10 @@
     </div>
   </div>
 
-  <div class="footer">CHEVA SHALA YOGA · เสาวภา หงษ์ทอง · cheva210121@gmail.com</div>
+  <div style="text-align:center; margin-top: 20px;">
+    <a href="https://lin.ee/YQq9atLO"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/th.png" alt="เพิ่มเพื่อน" height="36" border="0"></a>
+  </div>
+  <div class="footer" style="margin-top: 16px;">CHEVA SHALA YOGA · เสาวภา หงษ์ทอง · cheva210121@gmail.com</div>
 
 </div>
 </body>
